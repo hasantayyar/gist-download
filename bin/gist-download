@@ -10,7 +10,7 @@ foreach (array(__DIR__ . '/../../autoload.php', __DIR__ . '/../vendor/autoload.p
         break;
     }
 }
-if (!$loaded) {
+if (!isset($loaded)) {
     die("\nError! Can't load libraries. Maybe your composer installation is wrong.\n\n");
 }
 if (!isset($argv[1]) || !isset($argv[2])) {
