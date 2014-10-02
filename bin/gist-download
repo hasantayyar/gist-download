@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+namespace Hasantayyar\GistDownload;
+
+foreach (array(__DIR__ . '/../../autoload.php', __DIR__ . '/../vendor/autoload.php') as $file) {
+    if (file_exists($file)) {
+        require $file;
+        $loaded = true;
+        break;
+    }
+}
+if (!$loaded) {
+    die("\nError! Can't load libraries. Maybe your composer installation is wrong.\n\n");
+}
+if (!isset($argv[1]) || !isset($argv[2])) {
+    echo "\nUsage : gist-download username save_path \n";
+    die();
+}
+$gist = new GistDownload();
+$username = $argv[1];
+$dir = $argv[2] . '/gists-' . $username;
+$gist->download($username, $dir);
