@@ -13,13 +13,13 @@ Usage
 
 If your vendor/bin directory is aglobal directory 
 ```
-$ gist-download hasantayyar
+$ gist-download hasantayyar ~/gist-folder/
 ```
 
 
 Or a local directory
 
 ```
-vendor/bin/gist-download hasantayyar
+vendor/bin/gist-download hasantayyar ~/gist-folder/
 ```
 
